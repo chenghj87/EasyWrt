@@ -96,7 +96,10 @@ jobs:
         
         rom=openwrt/bin/targets/mediatek/mt7981/immortalwrt-mediatek-mt7981-konka_komi-a31-squashfs-sysupgrade.bin
         getmd5 $rom        
-        cp -a $rom ./ARM_Out/EasyWrt-KOMI-A31-5.4-$(date +%Y%m%d)_${md5}.bin
+        cp -a $rom ./ARM_Out/EasyWrt-KOMI-A31-5.4-$(date +%Y%m%d)_${md5}_sysupgrade.bin
+        rom1=openwrt/bin/targets/mediatek/mt7981/immortalwrt-mediatek-mt7981-konka_komi-a31-squashfs-factory.bin
+        getmd5 $rom1        
+        cp -a $rom1 ./ARM_Out/EasyWrt-KOMI-A31-5.4-$(date +%Y%m%d)_${md5}_factory.bin
                
     - name: Upload Firmwares
       uses: actions/upload-artifact@main
